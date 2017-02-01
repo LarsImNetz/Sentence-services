@@ -2,6 +2,7 @@ package org.lla_private.service;
 
 import org.lla_private.service.ManipulationMethods.Assoc;
 import org.lla_private.service.buchstabendreher.BuchstabenImSatzVerdrehenModule;
+import org.lla_private.service.buchstabenzuzahlen.BuchstabenZuZahlenModule;
 import org.lla_private.service.kyrillisch.BuchstabenImSatzKyrillischModule;
 
 import com.google.inject.AbstractModule;
@@ -21,6 +22,7 @@ public class RegisterManipulationMethodModule extends AbstractModule implements 
 		// TODO: Die SentenceServices müssen hier weg!
 		install("verdrehen", "Buchstaben im Satz verdrehen", new BuchstabenImSatzVerdrehenModule());
 		install("kyrillisch", "Buchstaben durch Kyrillisch ersetzen", new BuchstabenImSatzKyrillischModule());
+		install("zuZahlen", "einige Buchstaben zu Zahlen", new BuchstabenZuZahlenModule());
 	}
 
 	private void install(String id, String description, AbstractModule module) {

@@ -3,10 +3,12 @@ package org.lla_private.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.inject.AbstractModule;
+
 public class ManipulationMethods {
 
 	private Methods methods;
-	
+
 	public ManipulationMethods() {
 		methods = new Methods();
 	}

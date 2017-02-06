@@ -1,5 +1,7 @@
 package org.lla_private.service;
 
+import javax.inject.Singleton;
+
 import org.lla_private.service.ManipulationMethods.Assoc;
 import org.lla_private.service.buchstabendreher.BuchstabenImSatzVerdrehenModule;
 import org.lla_private.service.buchstabenzuzahlen.BuchstabenZuZahlenModule;
@@ -18,6 +20,7 @@ public class RegisterManipulationMethodModule extends AbstractModule implements 
 	@Override
 	protected void configure() {
 		bind(IManipulationMethod.class).toInstance(this);
+		bind(IManipulationMethodCaller.class).to(ManipulationMethodCaller.class).in(Singleton.class);
 
 		// TODO: Die SentenceServices müssen hier weg!
 		install("verdrehen", "Buchstaben im Satz verdrehen", new BuchstabenImSatzVerdrehenModule());

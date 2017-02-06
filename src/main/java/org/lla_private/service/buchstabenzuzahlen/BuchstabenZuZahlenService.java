@@ -9,7 +9,7 @@ public class BuchstabenZuZahlenService implements IBuchstabenZuZahlenService {
 	@Override
 	public String convert(String satz) {
 		SatzManipulator satzManipulator = new SatzManipulator(new BuchstabenManipulatorDigit());
-		satzManipulator.setSentence(satz);
+		satzManipulator.setSentence(satz.toUpperCase());
 		satzManipulator.perform();
 		return satzManipulator.getSentence();
 	}

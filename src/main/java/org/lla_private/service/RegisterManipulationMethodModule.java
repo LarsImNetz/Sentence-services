@@ -23,14 +23,14 @@ public class RegisterManipulationMethodModule extends AbstractModule implements 
 		bind(IManipulationMethodCaller.class).to(ManipulationMethodCaller.class).in(Singleton.class);
 
 		// TODO: Die SentenceServices müssen hier weg!
-		install("verdrehen", "Buchstaben im Satz verdrehen", new BuchstabenImSatzVerdrehenModule());
-		install("kyrillisch", "Buchstaben durch Kyrillisch ersetzen", new BuchstabenImSatzKyrillischModule());
-		install("zuZahlen", "einige Buchstaben zu Zahlen", new BuchstabenZuZahlenModule());
+		install(ManipulationEnum.VERDREHEN, new BuchstabenImSatzVerdrehenModule());
+		install(ManipulationEnum.KYRILLISCH, new BuchstabenImSatzKyrillischModule());
+		install(ManipulationEnum.DIGITS, new BuchstabenZuZahlenModule());
 	}
 
-	private void install(String id, String description, AbstractModule module) {
+	private void install(ManipulationEnum manipulationType, AbstractModule module) {
 		install(module);
-		manipulationMethods.registerMethod(id, description);
+		manipulationMethods.registerMethod(manipulationType.name(), manipulationType.getDescription());
 	}
 
 	@Override

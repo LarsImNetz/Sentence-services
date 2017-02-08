@@ -20,14 +20,14 @@ public class ManipulationMethodCaller implements IManipulationMethodCaller {
 	
 	@Override
 	public String callAlgorithm(String convertMethod, String satz) {
-		switch (convertMethod) {
-		case "verdrehen":
+		switch (ManipulationEnum.forString(convertMethod)) {
+		case VERDREHEN:
 			IBuchstabenImSatzVerdrehenService verdrehenService = injector.getInstance(IBuchstabenImSatzVerdrehenService.class);
 			return verdrehenService.verdrehen(satz);
-		case "kyrillisch":
+		case KYRILLISCH:
 			IBuchstabenImSatzKyrillischService satzKyrillischService = injector.getInstance(IBuchstabenImSatzKyrillischService.class);
 			return satzKyrillischService.convert(satz);
-		case "zuZahlen":
+		case DIGITS:
 			IBuchstabenZuZahlenService satzZuZahlenService = injector.getInstance(IBuchstabenZuZahlenService.class);
 			return satzZuZahlenService.convert(satz);
 		default:

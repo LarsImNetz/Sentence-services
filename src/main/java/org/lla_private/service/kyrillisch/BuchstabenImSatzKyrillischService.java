@@ -1,15 +1,15 @@
 package org.lla_private.service.kyrillisch;
 
-import text.SatzManipulator;
-import text.manipulation.BuchstabenToKyrillisch;
+import text.manipulation.decorator.NoUmlautDecorator;
+import text.manipulation.satz.SatzManipulator;
+import text.manipulation.word.BuchstabenToKyrillisch;
 
 public class BuchstabenImSatzKyrillischService implements IBuchstabenImSatzKyrillischService {
 
 	@Override
 	public String convert(String satz) {
-		SatzManipulator satzManipulator = new SatzManipulator(new BuchstabenToKyrillisch());
+		SatzManipulator satzManipulator = new SatzManipulator(new NoUmlautDecorator(new BuchstabenToKyrillisch()));
 		satzManipulator.setSentence(satz.toUpperCase());
-		satzManipulator.perform();
 		return satzManipulator.getSentence();
 	}
 

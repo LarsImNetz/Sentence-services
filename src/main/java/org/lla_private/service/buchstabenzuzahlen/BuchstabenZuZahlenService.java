@@ -1,8 +1,8 @@
 package org.lla_private.service.buchstabenzuzahlen;
 
-import text.SatzManipulator;
-import text.manipulation.BuchstabenManipulator;
-import text.manipulation.BuchstabenManipulatorDigit;
+import text.manipulation.satz.SatzManipulator;
+import text.manipulation.word.BuchstabenManipulator;
+import text.manipulation.word.BuchstabenManipulatorDigit;
 
 public class BuchstabenZuZahlenService implements IBuchstabenZuZahlenService {
 
@@ -10,7 +10,6 @@ public class BuchstabenZuZahlenService implements IBuchstabenZuZahlenService {
 	public String convert(String satz) {
 		SatzManipulator satzManipulator = new SatzManipulator(new BuchstabenManipulatorDigit());
 		satzManipulator.setSentence(satz.toUpperCase());
-		satzManipulator.perform();
 		return satzManipulator.getSentence();
 	}
 

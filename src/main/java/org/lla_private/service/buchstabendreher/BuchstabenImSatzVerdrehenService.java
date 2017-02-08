@@ -1,7 +1,7 @@
 package org.lla_private.service.buchstabendreher;
 
-import text.SatzManipulator;
-import text.manipulation.BuchstabenManipulator;
+import text.manipulation.satz.SatzManipulator;
+import text.manipulation.word.BuchstabenManipulator;
 
 public class BuchstabenImSatzVerdrehenService implements IBuchstabenImSatzVerdrehenService {
 
@@ -9,7 +9,6 @@ public class BuchstabenImSatzVerdrehenService implements IBuchstabenImSatzVerdre
 	public String verdrehen(String satz) {
 		SatzManipulator satzManipulator = new SatzManipulator(new BuchstabenManipulator());
 		satzManipulator.setSentence(satz);
-		satzManipulator.perform();
 		return satzManipulator.getSentence();
 	}
 

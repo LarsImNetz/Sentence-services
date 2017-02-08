@@ -4,6 +4,7 @@ import javax.inject.Singleton;
 
 import org.lla_private.service.ManipulationMethods.Assoc;
 import org.lla_private.service.buchstabendreher.BuchstabenImSatzVerdrehenModule;
+import org.lla_private.service.buchstabenopf.BuchstabenOpfModule;
 import org.lla_private.service.buchstabenzuzahlen.BuchstabenZuZahlenModule;
 import org.lla_private.service.kyrillisch.BuchstabenImSatzKyrillischModule;
 
@@ -26,6 +27,7 @@ public class RegisterManipulationMethodModule extends AbstractModule implements 
 		install(ManipulationEnum.VERDREHEN, new BuchstabenImSatzVerdrehenModule());
 		install(ManipulationEnum.KYRILLISCH, new BuchstabenImSatzKyrillischModule());
 		install(ManipulationEnum.DIGITS, new BuchstabenZuZahlenModule());
+		install(ManipulationEnum.OPF, new BuchstabenOpfModule());
 	}
 
 	private void install(ManipulationEnum manipulationType, AbstractModule module) {

@@ -3,7 +3,8 @@ package org.lla_private.service;
 public enum ManipulationEnum {
 	VERDREHEN("Buchstaben im Satz verdrehen"),
 	KYRILLISCH("Buchstaben durch Kyrillisch ersetzen"),
-	DIGITS("einige Buchstaben zu Zahlen");
+	DIGITS("einige Buchstaben zu Zahlen"),
+	OPF("Buchstaben zu Opf Zeichen");
 
 	private String description;
 	

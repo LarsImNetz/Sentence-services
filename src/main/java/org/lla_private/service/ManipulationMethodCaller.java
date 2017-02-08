@@ -3,6 +3,7 @@ package org.lla_private.service;
 import javax.inject.Inject;
 
 import org.lla_private.service.buchstabendreher.IBuchstabenImSatzVerdrehenService;
+import org.lla_private.service.buchstabenopf.IBuchstabenOpfService;
 import org.lla_private.service.buchstabenzuzahlen.IBuchstabenZuZahlenService;
 import org.lla_private.service.kyrillisch.IBuchstabenImSatzKyrillischService;
 
@@ -30,6 +31,9 @@ public class ManipulationMethodCaller implements IManipulationMethodCaller {
 		case DIGITS:
 			IBuchstabenZuZahlenService satzZuZahlenService = injector.getInstance(IBuchstabenZuZahlenService.class);
 			return satzZuZahlenService.convert(satz);
+		case OPF:
+			IBuchstabenOpfService opfService = injector.getInstance(IBuchstabenOpfService.class);
+			return opfService.manipulieren(satz);
 		default:
 			break;
 		}

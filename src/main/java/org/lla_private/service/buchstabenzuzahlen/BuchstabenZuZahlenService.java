@@ -1,7 +1,6 @@
 package org.lla_private.service.buchstabenzuzahlen;
 
 import text.manipulation.satz.SatzManipulator;
-import text.manipulation.word.BuchstabenManipulator;
 import text.manipulation.word.BuchstabenManipulatorDigit;
 
 public class BuchstabenZuZahlenService implements IBuchstabenZuZahlenService {

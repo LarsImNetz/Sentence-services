@@ -6,7 +6,9 @@ import org.lla_private.service.ManipulationMethods.Assoc;
 import org.lla_private.service.buchstabendreher.BuchstabenImSatzVerdrehenModule;
 import org.lla_private.service.buchstabenopf.BuchstabenOpfModule;
 import org.lla_private.service.buchstabenzuzahlen.BuchstabenZuZahlenModule;
+import org.lla_private.service.fraktur.BuchstabenFrakturModule;
 import org.lla_private.service.kyrillisch.BuchstabenImSatzKyrillischModule;
+import org.lla_private.service.schreibschrift.BuchstabenSchreibschriftModule;
 
 import com.google.inject.AbstractModule;
 
@@ -28,6 +30,8 @@ public class RegisterManipulationMethodModule extends AbstractModule implements 
 		install(ManipulationEnum.KYRILLISCH, new BuchstabenImSatzKyrillischModule());
 		install(ManipulationEnum.DIGITS, new BuchstabenZuZahlenModule());
 		install(ManipulationEnum.OPF, new BuchstabenOpfModule());
+		install(ManipulationEnum.FRAKTUR, new BuchstabenFrakturModule());
+		install(ManipulationEnum.SCHREIBSCHRIFT, new BuchstabenSchreibschriftModule());
 	}
 
 	private void install(ManipulationEnum manipulationType, AbstractModule module) {

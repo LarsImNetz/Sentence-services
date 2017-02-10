@@ -4,6 +4,8 @@ public enum ManipulationEnum {
 	VERDREHEN("Buchstaben im Satz verdrehen"),
 	KYRILLISCH("Buchstaben durch Kyrillisch ersetzen"),
 	DIGITS("einige Buchstaben zu Zahlen"),
+	FRAKTUR("Buchstaben zu Fraktur"),
+	SCHREIBSCHRIFT("Buchstaben in Schreibschrift"),
 	OPF("Buchstaben zu Opf Zeichen");
 
 	private String description;

@@ -5,7 +5,9 @@ import javax.inject.Inject;
 import org.lla_private.service.buchstabendreher.IBuchstabenImSatzVerdrehenService;
 import org.lla_private.service.buchstabenopf.IBuchstabenOpfService;
 import org.lla_private.service.buchstabenzuzahlen.IBuchstabenZuZahlenService;
+import org.lla_private.service.fraktur.IBuchstabenFrakturService;
 import org.lla_private.service.kyrillisch.IBuchstabenImSatzKyrillischService;
+import org.lla_private.service.schreibschrift.IBuchstabenSchreibschriftService;
 
 import com.google.inject.Injector;
 
@@ -34,6 +36,12 @@ public class ManipulationMethodCaller implements IManipulationMethodCaller {
 		case OPF:
 			IBuchstabenOpfService opfService = injector.getInstance(IBuchstabenOpfService.class);
 			return opfService.manipulieren(satz);
+		case FRAKTUR:
+			IBuchstabenFrakturService service = injector.getInstance(IBuchstabenFrakturService.class);
+			return service.manipulieren(satz);
+		case SCHREIBSCHRIFT:
+			IBuchstabenSchreibschriftService service2 = injector.getInstance(IBuchstabenSchreibschriftService.class);
+			return service2.manipulieren(satz);
 		default:
 			break;
 		}

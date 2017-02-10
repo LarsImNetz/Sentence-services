@@ -9,7 +9,7 @@ public class BuchstabenOpfService implements IBuchstabenOpfService {
 
 	@Override
 	public String manipulieren(String satz) {
-		SatzManipulator satzManipulator = new SatzManipulator(new NoUmlautDecorator(new UppercaseDecorator(new BuchstabenToOpf())));
+		SatzManipulator satzManipulator = new SatzManipulator(new NoUmlautDecorator(new BuchstabenToOpf()));
 		satzManipulator.setSentence(satz);
 		return satzManipulator.getSentence();
 	}

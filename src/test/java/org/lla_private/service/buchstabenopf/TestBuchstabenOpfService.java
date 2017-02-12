@@ -7,8 +7,8 @@ public class TestBuchstabenOpfService {
 	@Test
 	public void testOpf() {
 		BuchstabenOpfService service = new BuchstabenOpfService();
-		String actual = service.manipulieren("a");
+		String actual = service.manipulieren("Aa");
 
-		Assert.assertEquals("&Aopf;", actual);
+		Assert.assertEquals("&#120120;&aopf;", actual);
 	}
 }

@@ -1,10 +1,8 @@
 package org.lla_private.service.fraktur;
 
 import text.manipulation.decorator.NoUmlautDecorator;
-import text.manipulation.decorator.UppercaseDecorator;
 import text.manipulation.satz.SatzManipulator;
 import text.manipulation.word.BuchstabenToFraktur;
-import text.manipulation.word.BuchstabenToOpf;
 
 public class BuchstabenFrakturService implements IBuchstabenFrakturService {
 

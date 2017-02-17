@@ -1,7 +1,6 @@
 package org.lla_private.service.buchstabenopf;
 
 import text.manipulation.decorator.NoUmlautDecorator;
-import text.manipulation.decorator.UppercaseDecorator;
 import text.manipulation.satz.SatzManipulator;
 import text.manipulation.word.BuchstabenToOpf;
 

@@ -22,6 +22,7 @@ public class ManipulationMethodCaller implements IManipulationMethodCaller {
 		this.injector = injector;
 	}
 	
+	// TODO: SRP verletzt?
 	@Override
 	public String callAlgorithm(String convertMethod, String satz) {
 		switch (ManipulationEnum.forString(convertMethod)) {

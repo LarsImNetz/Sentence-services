@@ -23,6 +23,9 @@ public class ManipulationMethodCaller implements IManipulationMethodCaller {
 	}
 	
 	// TODO: SRP verletzt?
+	// TODO: alle SatzmanipulationsServices vereinheitlichen, das exact ein Interface verwendet wird
+	// TODO: Die Methode sollte mit dem Enum gerufen werden, nicht mit einem String
+	// TODO: Der Rückgabewert sollte das Interface sein, sonst kommt man für Tests schlecht dazwischen
 	@Override
 	public String callAlgorithm(String convertMethod, String satz) {
 		switch (ManipulationEnum.forString(convertMethod)) {

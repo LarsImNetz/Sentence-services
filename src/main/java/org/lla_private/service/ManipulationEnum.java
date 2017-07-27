@@ -7,6 +7,7 @@ public enum ManipulationEnum {
 	FRAKTUR("Buchstaben zu Fraktur"),
 	SCHREIBSCHRIFT("Buchstaben in Schreibschrift"),
 	OPF("Buchstaben zu Opf Zeichen"),
+	KLAMMER("Buchstaben in Klammern"),
 	CIRCLE("Buchstaben im Kreis");
 
 	private String description;

@@ -5,6 +5,7 @@ import javax.inject.Singleton;
 import org.lla_private.service.ManipulationMethods.Assoc;
 import org.lla_private.service.buchstabencircle.BuchstabenCircleModule;
 import org.lla_private.service.buchstabendreher.BuchstabenImSatzVerdrehenModule;
+import org.lla_private.service.buchstabeninklammern.BuchstabenInKlammernModule;
 import org.lla_private.service.buchstabenopf.BuchstabenOpfModule;
 import org.lla_private.service.buchstabenzuzahlen.BuchstabenZuZahlenModule;
 import org.lla_private.service.fraktur.BuchstabenFrakturModule;
@@ -33,6 +34,7 @@ public class RegisterManipulationMethodModule extends AbstractModule implements 
 		install(ManipulationEnum.OPF, new BuchstabenOpfModule());
 		install(ManipulationEnum.FRAKTUR, new BuchstabenFrakturModule());
 		install(ManipulationEnum.SCHREIBSCHRIFT, new BuchstabenSchreibschriftModule());
+		install(ManipulationEnum.KLAMMER, new BuchstabenInKlammernModule());
 		install(ManipulationEnum.CIRCLE, new BuchstabenCircleModule());
 	}
 

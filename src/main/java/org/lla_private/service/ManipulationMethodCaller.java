@@ -4,6 +4,7 @@ import javax.inject.Inject;
 
 import org.lla_private.service.buchstabencircle.IBuchstabenCircleService;
 import org.lla_private.service.buchstabendreher.IBuchstabenImSatzVerdrehenService;
+import org.lla_private.service.buchstabeninklammern.IBuchstabenInKlammernService;
 import org.lla_private.service.buchstabenopf.IBuchstabenOpfService;
 import org.lla_private.service.buchstabenzuzahlen.IBuchstabenZuZahlenService;
 import org.lla_private.service.fraktur.IBuchstabenFrakturService;
@@ -47,6 +48,9 @@ public class ManipulationMethodCaller implements IManipulationMethodCaller {
 		case SCHREIBSCHRIFT:
 			IBuchstabenSchreibschriftService service2 = injector.getInstance(IBuchstabenSchreibschriftService.class);
 			return service2.manipulieren(satz);
+		case KLAMMER:
+			IBuchstabenInKlammernService service4 = injector.getInstance(IBuchstabenInKlammernService.class);
+			return service4.manipulieren(satz);
 		case CIRCLE:
 			IBuchstabenCircleService service3 = injector.getInstance(IBuchstabenCircleService.class);
 			return service3.manipulieren(satz);
